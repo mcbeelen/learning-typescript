@@ -1,0 +1,19 @@
+{
+    "name": "learning-typescript",
+    "version": "0.0.1",
+    "author": "McBeelen",
+    "homepage": "http://github.com/mcbeelen/learning-typescript",
+    "private": true,
+    "main": "index.js",
+    "devDependencies": {
+        "@types/chai": "^4.1.2",
+        "@types/mocha": "^2.2.47",
+        "chai": "^4.1.2",
+        "mocha": "^5.0.0",
+        "ts-node": "^4.1.0",
+        "typescript": "^2.6.2"
+    },
+    "scripts": {
+        "test": "mocha --require ts-node/register src/**/hello-world.spec.ts"
+    }
+}
