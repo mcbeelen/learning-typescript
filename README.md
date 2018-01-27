@@ -37,12 +37,29 @@ The `npm install` command alo generate or updates the package-lock.json, which c
 resolved dependency tree with fixed versions. It will identify how a version of the project was build at any point in time and should be added to the git repository
 
 
+# Preparing for Unit testing: devDependencies and config
 
-# Some more devDependencies for testing
+## Install mocha chai ts-node and the types
 
+Since TypeScript is a superset of JavaScript, we can use JavaScript tooling, for instance mocha and chai.
+For those tools the '@types' have been develop, so that TypeScript and IDE's can understand those frameworks properly.
+
+All of this does have to be added to the project.
 
 ```npm install chai mocha ts-node @types/chai @types/mocha --save-dev```
 
+## Configure npm to use mocha when we execute `npm test`
+
+In a Node-project running the Unit tests can be done by running `npm test` from the command line / in a terminal. 
+Your project does need to be configured in such a way that it will use mocha with typescript to run all `*.spec.ts`-file from your project.
+
+Therefor make sure the test-script in your package.json takes care of this:
+
+```
+"scripts": {
+        "test": "mocha --require ts-node/register src/**/**.spec.ts"
+    }
+```
 
 # Directory structure
 
